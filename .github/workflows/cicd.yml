@@ -103,6 +103,7 @@ jobs:
           uses: docker/build-push-action@v6
           with:
             push: true
+            context: .
             tags: basudevjena1/bankapp:latest  
             file: ./Dockerfile
             
