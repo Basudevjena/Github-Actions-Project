@@ -104,5 +104,6 @@ jobs:
           with:
             push: true
             tags: basudevjena1/bankapp:latest  
+            file: ./Dockerfile
             
 
