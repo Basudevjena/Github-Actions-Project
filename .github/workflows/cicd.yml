@@ -22,4 +22,18 @@ jobs:
     - name: Build with Maven
       run: mvn compile
 
+  Security_check:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Trivy_fs Scan
+      run: trivy fs --format table -o fs-report.json .
+    - name: Gitleaks Installation and Scan 
+      run: |
+          sudo apt install gitleaks -y
+          gitleaks detect source . -r gitleaks-report.json -f json
+           
+
    
